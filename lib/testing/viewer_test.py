@@ -2,6 +2,7 @@ import pytest
 
 from classes.movie import Movie
 from classes.viewer import Viewer
+from classes.review import Review
 
 class TestViewer:
     '''Viewer in viewer.py'''
@@ -40,7 +41,8 @@ class TestViewer:
         '''has a method "reviewed_movie" that checks if a movie has been reviewed or not.'''
         viewer = Viewer(username="lucky_the_cat")
         movie_1 = Movie("No Country for Old Men")
-        viewer.reviewed_movies.append(movie_1)
+        # viewer.reviewed_movies.append(movie_1) WTF
+        Review(viewer, movie_1, 3)
         assert viewer.reviewed_movie(movie_1)
         movie_2 = Movie("The Secret Life of Pets")
         assert not viewer.reviewed_movie(movie_2)
@@ -54,4 +56,4 @@ class TestViewer:
         assert viewer.reviews[0].rating == 3
         viewer.rate_movie(movie, 4)
         assert len(viewer.reviewed_movies) == 1
-        assert viewer.reviews[0]
+        assert viewer.reviews[0].rating == 4
