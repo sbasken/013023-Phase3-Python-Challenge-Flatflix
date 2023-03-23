@@ -7,6 +7,8 @@ class Viewer:
 
         Viewer.usernames.append(self.username)
 
+        self.reviews = []
+
     # username property goes here!
     @property
     def username(self):
@@ -14,11 +16,13 @@ class Viewer:
 
     @username.setter
     def username(self, username):
-        if (not username in Viewer.usernames) and (6 <= len(uv1sername) <= 16):
+        if (not username in Viewer.usernames) and (6 <= len(username) <= 16):
             self._username = username
         else:
             raise Exception("Usernames must be unique strings between 6 and 16 characters!")
 
+    def add_review(self, review):
+        self.reviews.append(review)
 
     def reviewed_movie(self, movie):
         pass

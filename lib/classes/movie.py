@@ -3,6 +3,8 @@ class Movie:
     def __init__(self, title):
         self.title = title
 
+        self.reviews =[]
+
     # title property goes here!
     @property
     def title(self):
@@ -14,6 +16,9 @@ class Movie:
             self._title = title
         else:
             raise Exception("titles must be strings greater than 0 characters!")
+        
+    def add_review(self, review):
+        self.reviews.append(review)
 
     def average_rating(self):
         pass
