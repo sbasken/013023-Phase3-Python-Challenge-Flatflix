@@ -64,20 +64,19 @@ build out any helper methods if needed.
 
 - `Movie __init__(self, title)`
   - `Movie` is initialized with a title (string)
-  - Title **can be** changed after the `Movie` is initialized
-- `Movie property title()`
-  - Returns the `Movie`'s title
   - Titles must be strings greater than 0 characters
+  - Title **can be** changed after the `Movie` is initialized
+- `Movie property title`
+  - Returns the `Movie`'s title
 
 #### Viewer
 
 - `Viewer __init__(self, username)`
   - `Viewer` is initialized with a username (string)
+  - Usernames must be _unique_ strings between 6 and 16 characters, inclusive
   - Usernames **can be** changed after the Viewer is initialized
-- `Viewer property username()`
+- `Viewer property username`
   - Returns the Viewer's username
-  - Usernames must be _unique_ strings between 6 and 16 characters,
-    inclusive
 
 #### Review
 
@@ -86,7 +85,7 @@ build out any helper methods if needed.
     rating (number)
   - Instantiating a review should add it to its `viewer`'s `review`s
   - Instantiating a review should add it to its `movie`'s `reviews`
-- `Review property rating()`
+- `Review property rating`
   - Returns the rating for the `Review` instance
   - Ratings must be integers between 1 and 5, inclusive
 
@@ -94,25 +93,25 @@ build out any helper methods if needed.
 
 #### Review
 
-- `Review property viewer()`
+- `Review property viewer`
   - Returns the viewer who wrote the review
   - Viewers must be `Viewer` instances
-- `Review property movie()`
+- `Review property movie`
   - Returns the movie that is being reviewed
   - Movies must be `Movie` instances
 
 #### Viewer
 
-- `Viewer reviews`
+- `Viewer property reviews`
   - Returns a list of `Review` instances associated with the `Viewer` instance.
-- `Viewer reviewed_movies`
+- `Viewer property reviewed_movies`
   - Returns a list of `Movie` instances reviewed by the `Viewer` instance.
 
 #### Movie
 
-- `Movie reviews`
+- `Movie property reviews`
   - Returns a list of all the `Review` instances for the `Movie`.
-- `Movie reviewers`
+- `Movie property reviewers`
   - Returns a list of all of the `Viewer` instances that reviewed the `Movie`.
 
 ### Aggregate and Association Methods
