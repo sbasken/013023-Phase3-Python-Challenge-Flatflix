@@ -1,3 +1,5 @@
+from .review import Review
+
 class Viewer:
 
     usernames = []
@@ -16,7 +18,7 @@ class Viewer:
 
     @username.setter
     def username(self, username):
-        if (not username in Viewer.usernames) and (6 <= len(username) <= 16):
+        if (username not in Viewer.usernames) and (6 <= len(username) <= 16):
             self._username = username
         else:
             raise Exception("Usernames must be unique strings between 6 and 16 characters!")
@@ -33,4 +35,10 @@ class Viewer:
         return [ review.movie for review in self.reviews if review.movie == movie]
 
     def rate_movie(self, movie, rating):
-        pass
+        if self.reviewed_movie(movie):
+            for review in self.reviews:
+                review.rating = rating
+        else:
+            Review(self, movie, rating)
+
+

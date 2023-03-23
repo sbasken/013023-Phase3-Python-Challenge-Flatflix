@@ -15,8 +15,9 @@ if __name__ == '__main__':
     v2 = Viewer("sakiboo")
 
     r1 = Review(v1, m1, 5)
-    r2 = Review(v1, m1, 3)
-
+    r2 = Review(v2, m1, 5)
+    r2 = Review(v1, m2, 3)
+    r2 = Review(v2, m2, 5)
 
 
 
