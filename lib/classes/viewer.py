@@ -23,9 +23,14 @@ class Viewer:
 
     def add_review(self, review):
         self.reviews.append(review)
+        
+    @property
+    def reviewed_movies(self):
+        return [ review.movie for review in self.reviews ]
+
 
     def reviewed_movie(self, movie):
-        pass
+        return [ review.movie for review in self.reviews if review.movie == movie]
 
     def rate_movie(self, movie, rating):
         pass

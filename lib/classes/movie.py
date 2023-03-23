@@ -20,6 +20,10 @@ class Movie:
     def add_review(self, review):
         self.reviews.append(review)
 
+    @property
+    def reviewers(self):
+        return [ review.viewer for review in self.reviews ]
+
     def average_rating(self):
         pass
 
