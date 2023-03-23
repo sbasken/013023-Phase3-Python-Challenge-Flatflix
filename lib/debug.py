@@ -8,6 +8,11 @@ from classes.viewer import Viewer
 if __name__ == '__main__':
 #  WRITE YOUR TEST CODE HERE ###
 
+    m1 = Movie("Zoolander")
+
+    v1 = Viewer("kokotaro")
+    v2 = Viewer("sakiboo")
+
 
 
 
