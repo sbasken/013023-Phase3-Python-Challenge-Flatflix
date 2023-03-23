@@ -15,6 +15,8 @@ class Viewer:
     @property
     def username(self):
         return self._username
+    
+    ### this one doesn't pass the test but when I try getter and setter in ipdb/debug.py, it works.
 
     @username.setter
     def username(self, username):
@@ -22,6 +24,7 @@ class Viewer:
             self._username = username
         else:
             raise Exception("Usernames must be unique strings between 6 and 16 characters!")
+        
 
     def add_review(self, review):
         self.reviews.append(review)
